@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbrCoreRestApiWithSwaggerAndCors", "SbrCoreRestApiWithSwaggerAndCors\SbrCoreRestApiWithSwaggerAndCors.csproj", "{BA24AE5C-D732-4C8C-AE40-65AE053B1BAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA24AE5C-D732-4C8C-AE40-65AE053B1BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA24AE5C-D732-4C8C-AE40-65AE053B1BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA24AE5C-D732-4C8C-AE40-65AE053B1BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA24AE5C-D732-4C8C-AE40-65AE053B1BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C260B3E4-3100-42C2-8D21-B33002EB12F3}
+	EndGlobalSection
+EndGlobal
