@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace SbrCoreRestApiWithSwaggerAndCors
 {
@@ -32,8 +35,20 @@ namespace SbrCoreRestApiWithSwaggerAndCors
 
 
             services.AddSwaggerGen(c =>
-               c.SwaggerDoc("v1", new OpenApiInfo { Title = typeof(Startup).Namespace, Version = "V1" })
-               );
+            {
+                c.SwaggerDoc(
+                   "v1",
+                   new OpenApiInfo 
+                   { Title = typeof(Startup).Namespace,
+                     Version = "V1"
+                   });
+
+                var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
+
+                c.IncludeXmlComments(xmlCommentsFullPath);
+
+            });
 
             services.AddCors(options =>
                 options.AddPolicy(SampleAllowAnyOrigins,
@@ -72,14 +87,16 @@ namespace SbrCoreRestApiWithSwaggerAndCors
                 //app.UseHsts();
             }
 
+            
+
+            app.UseHttpsRedirection();
+
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{typeof(Startup).Namespace} API V1");
                 c.RoutePrefix = string.Empty;
             });
-
-            app.UseHttpsRedirection();
 
             app.UseCors(SampleAllowAnyOrigins);
 

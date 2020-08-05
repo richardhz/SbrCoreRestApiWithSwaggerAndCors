@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestApi03</name>
+    </assembly>
+    <members>
+        <member name="T:TestApi03.Controllers.Sample">
+            <summary>
+            Sample class that can be removed
+            </summary>
+        </member>
+        <member name="T:TestApi03.Controllers.SampleController">
+            <summary>
+            Sample controller
+            </summary>
+        </member>
+        <member name="M:TestApi03.Controllers.SampleController.GetSample">
+            <summary>
+            A sample method that can be removed
+            </summary>
+        </member>
+    </members>
+</doc>
